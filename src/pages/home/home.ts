@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Observable } from '../../../node_modules/rxjs';
 import { Task } from '../../model/task/task.model';
 import { TaskListService } from '../../services/taskList.service';
+import { map } from 'rxjs/operators';
 
 //@IonicPage()
 @Component({
@@ -15,13 +16,24 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private taskListService: TaskListService) {
     this.taskList = this.taskListService.getTaskList()
-      .snapshotChanges()
-      .map(
+      .snapshotChanges().pipe(
+      map(
       changes => {
         return changes.map(c => ({
           key: c.payload.key, ...c.payload.val()
         }))
-      });
+      }));
+  }
+
+  verificaEstado(status:boolean){
+    let logo : string;
+    if(status == true){
+      logo = 'checkmark';
+    } else {
+      logo = 'clock';
+    }
+    // console.log(this.filtro);
+    return logo;
   }
 
 }

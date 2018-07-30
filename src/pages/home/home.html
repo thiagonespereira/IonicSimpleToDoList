@@ -20,7 +20,7 @@
 
     <ion-item *ngFor="let task of taskList | async" 
     detail-push navPush="EditTaskPage" [navParams]="{task:task}">
-      {{task.title}}
+      {{task.title}} <ion-icon [name]="verificaEstado(task.status)"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

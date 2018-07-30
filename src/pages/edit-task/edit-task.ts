@@ -5,7 +5,7 @@ import { TaskListService } from '../../services/taskList.service';
 import { HomePage } from '../home/home';
 
 /**
- * Generated class for the AddTaskPage page.
+ * Generated class for the EditTaskPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,29 +13,36 @@ import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-task',
-  templateUrl: 'add-task.html',
+  selector: 'page-edit-task',
+  templateUrl: 'edit-task.html',
 })
-export class AddTaskPage {
+export class EditTaskPage {
 
   task: Task ={
     title: '',
     description : '',
     status: false
   }
-
-  constructor(public navCtrl: NavController, 
+  
+  constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public taskListService: TaskListService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddNotePage');
+    this.task = this.navParams.get('task');
   }
 
-  addTask(task: Task) {
-    this.taskListService.addTask(task).then(ref => {
+  updateTask(task : Task) {
+    this.taskListService.updateTask(task).then(() => {
       this.navCtrl.setRoot(HomePage);
     })
   }
+
+  removeTask(task : Task) {
+    this.taskListService.removeTask(task).then(() => {
+      this.navCtrl.setRoot(HomePage);
+    })
+  }
+
 }
