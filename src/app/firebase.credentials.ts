@@ -1,8 +1,8 @@
 export const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyAFlh_pngGJFiH23d-PbPop-ppDLED4HRM",
-    authDomain: "ionicsimpletodolist.firebaseapp.com",
-    databaseURL: "https://ionicsimpletodolist.firebaseio.com",
-    projectId: "ionicsimpletodolist",
+    apiKey: "XXXX",
+    authDomain: "XXXX",
+    databaseURL: "XXXX",
+    projectId: "XXXX",
     storageBucket: "",
-    messagingSenderId: "249591722925"
+    messagingSenderId: "XXXX"
 }
