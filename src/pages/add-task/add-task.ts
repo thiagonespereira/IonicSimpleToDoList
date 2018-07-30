@@ -35,7 +35,7 @@ export class AddTaskPage {
 
   addTask(task: Task) {
     this.taskListService.addTask(task).then(ref => {
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot('HomePage');
     })
   }
 }

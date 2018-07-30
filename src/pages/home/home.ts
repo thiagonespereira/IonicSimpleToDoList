@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 import { Observable } from '../../../node_modules/rxjs';
 import { Task } from '../../model/task/task.model';
 import { TaskListService } from '../../services/taskList.service';
 import { map } from 'rxjs/operators';
 
-//@IonicPage()
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -32,7 +32,6 @@ export class HomePage {
     } else {
       logo = 'clock';
     }
-    // console.log(this.filtro);
     return logo;
   }
 

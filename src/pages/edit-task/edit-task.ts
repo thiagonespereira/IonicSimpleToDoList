@@ -35,13 +35,13 @@ export class EditTaskPage {
 
   updateTask(task : Task) {
     this.taskListService.updateTask(task).then(() => {
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot('HomePage');
     })
   }
 
   removeTask(task : Task) {
     this.taskListService.removeTask(task).then(() => {
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot('HomePage');
     })
   }
 

@@ -14,8 +14,8 @@ import { TaskListService } from '../services/taskList.service';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
+    // HomePage
   ],
   imports: [
     BrowserModule,
@@ -25,8 +25,8 @@ import { TaskListService } from '../services/taskList.service';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
+    // HomePage
   ],
   providers: [
     StatusBar,
